@@ -1,0 +1,47 @@
+version: "3"
+services:
+  mageai:
+    image: mageai/mageai:latest
+    container_name: magic
+    depends_on:
+      - postgres
+    command: ["mage", "start", "${PROJECT_NAME}"]
+    build:
+      context: .
+      dockerfile: Dockerfile-local
+    env_file:
+      - .env
+    environment:
+      USER_CODE_PATH: /home/src/${PROJECT_NAME}
+    ports:
+      - 6789:6789
+    volumes:
+      - .:/home/src/
+      - ./.dlt:/home/src/${PROJECT_NAME}/.dlt
+      - ./${PROJECT_NAME}:/home/src/${PROJECT_NAME}
+    restart: on-failure:5
+
+  postgres:
+    image: postgres
+    container_name: db-postgres
+    restart: on-failure
+    ports:
+      - 5432:5432
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - ./pg-data:/var/lib/postgresql/data
+
+    # env_file:
+    #   - .env
+    # environment:
+    # ENV: dev
+    # POSTGRES_DB: ${POSTGRES_SCHEMA}
+    # POSTGRES_USER: ${POSTGRES_USER}
+    # POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    # POSTGRES_HOST: db-postgres
+    # PG_HOST_PORT: ${PG_HOST_PORT}
