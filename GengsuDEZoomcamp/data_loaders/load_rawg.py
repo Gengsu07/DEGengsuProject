@@ -1,8 +1,9 @@
 import datetime
 import json
 import os
-
 import dlt
+from dlt.common.typing import TDataItems
+from dlt.common.schema import TTableSchema
 import requests
 from tenacity import retry, stop_after_attempt, wait_fixed
 from tqdm import tqdm
@@ -13,9 +14,8 @@ params = {"key": f"{api_key}", "page_size": 100}
 
 current_date = datetime.datetime.now().date()
 current_year = datetime.datetime.now().year
-first_date_this_year = datetime.datetime(current_year, 3, 15).date()
+first_date_this_year = datetime.datetime(current_year, 3, 20).date()
 params["dates"] = f"{first_date_this_year},{current_date}"
-
 
 @retry(stop=stop_after_attempt(3), wait=wait_fixed(1))
 def stream_download_jsonl(url, params):
@@ -50,11 +50,12 @@ def stream_download_jsonl(url, params):
 @data_loader
 def data_load():
     pipeline = dlt.pipeline(
-        pipeline_name="rawg_postgres", destination="postgres", dataset_name="rawg"
+        pipeline_name="rawg_postgres", destination="postgres", dataset_name="staging"
     )
     load_info = pipeline.run(
         stream_download_jsonl(url, params),
-        table_name="staging_rawg",
+        table_name="rawg",
         write_disposition="replace",
     )
     print(load_info)
+ 

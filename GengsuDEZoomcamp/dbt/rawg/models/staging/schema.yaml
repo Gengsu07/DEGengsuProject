@@ -1,0 +1,175 @@
+version: 2
+
+models:
+  - name: stg_rawg
+    description: ""
+    columns:
+      - name: slug
+        data_type: character varying
+        description: ""
+
+      - name: name
+        data_type: character varying
+        description: ""
+
+      - name: playtime
+        data_type: bigint
+        description: ""
+
+      - name: released
+        data_type: character varying
+        description: ""
+
+      - name: tba
+        data_type: boolean
+        description: ""
+
+      - name: background_image
+        data_type: character varying
+        description: ""
+
+      - name: rating
+        data_type: double precision
+        description: ""
+
+      - name: rating_top
+        data_type: bigint
+        description: ""
+
+      - name: ratings_count
+        data_type: bigint
+        description: ""
+
+      - name: reviews_text_count
+        data_type: bigint
+        description: ""
+
+      - name: added
+        data_type: bigint
+        description: ""
+
+      - name: added_by_status__yet
+        data_type: bigint
+        description: ""
+
+      - name: added_by_status__owned
+        data_type: bigint
+        description: ""
+
+      - name: added_by_status__beaten
+        data_type: bigint
+        description: ""
+
+      - name: added_by_status__toplay
+        data_type: bigint
+        description: ""
+
+      - name: added_by_status__dropped
+        data_type: bigint
+        description: ""
+
+      - name: added_by_status__playing
+        data_type: bigint
+        description: ""
+
+      - name: suggestions_count
+        data_type: bigint
+        description: ""
+
+      - name: updated
+        data_type: timestamp with time zone
+        description: ""
+
+      - name: id
+        data_type: bigint
+        description: ""
+
+      - name: reviews_count
+        data_type: bigint
+        description: ""
+
+      - name: saturated_color
+        data_type: character varying
+        description: ""
+
+      - name: dominant_color
+        data_type: character varying
+        description: ""
+
+      - name: _dlt_load_id
+        data_type: character varying
+        description: ""
+
+      - name: _dlt_id
+        data_type: character varying
+        description: ""
+        test:
+          - unique
+          - not null
+
+      - name: esrb_rating__id
+        data_type: bigint
+        description: ""
+
+      - name: esrb_rating__name
+        data_type: character varying
+        description: ""
+
+      - name: esrb_rating__slug
+        data_type: character varying
+        description: ""
+
+      - name: esrb_rating__name_en
+        data_type: character varying
+        description: ""
+
+      - name: esrb_rating__name_ru
+        data_type: character varying
+        description: ""
+
+      - name: community_rating
+        data_type: bigint
+        description: ""
+
+  - name: stg_platforms
+    description: ""
+    columns:
+      - name: platform__id
+        data_type: bigint
+        description: ""
+      - name: platform__name
+        data_type: character varying
+        description: ""
+      - name: platform__slug
+        data_type: character varying
+        description: ""
+      - name: _dlt_parent_id
+        data_type: character varying
+        description: ""
+      - name: _dlt_list_idx
+        data_type: bigint
+        description: ""
+      - name: _dlt_id
+        data_type: character varying
+        description: ""
+
+  - name: stg_genres
+    description: ""
+    columns:
+      - name: id
+        data_type: bigint
+        description: ""
+      - name: name
+        data_type: character varying
+        description: ""
+
+      - name: slug
+        data_type: character varying
+        description: ""
+
+      - name: _dlt_parent_id
+        data_type: character varying
+        description: ""
+      - name: _dlt_id
+        data_type: character varying
+        description: ""

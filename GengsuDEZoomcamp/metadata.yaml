@@ -56,3 +56,8 @@ help_improve_mage: true
 features:
   display_local_timezone: true
   command_center: true
+  add_new_block_v2: true
+  code_block_v2: true
+  dbt_v2: false
+  compute_management: true
+pipelines:

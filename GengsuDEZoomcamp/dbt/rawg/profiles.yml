@@ -1,0 +1,15 @@
+# https://docs.getdbt.com/docs/core/connect-data-platform/profiles.yml
+
+rawg:
+  outputs:
+    dev:
+      type: postgres
+      host: db-postgres
+      user: postgres
+      password: postgres
+      port: 5432
+      dbname: rawg
+      schema: staging
+      threads: 3
+
+  target: dev
