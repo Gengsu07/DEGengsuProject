@@ -1,7 +1,6 @@
 version: "3"
 services:
   mageai:
-    image: mageai/mageai:latest
     container_name: magic
     depends_on:
       - postgres

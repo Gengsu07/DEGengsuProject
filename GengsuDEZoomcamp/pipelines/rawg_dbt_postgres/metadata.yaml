@@ -1,4 +1,73 @@
-blocks: []
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_profile_target: dev
+    dbt_profiles_file_path: dbt/rawg/profiles.yml
+    dbt_project_name: dbt/rawg
+    file_path: dbt/rawg/models/staging/stg_rawg.sql
+    file_source:
+      path: dbt/rawg/models/staging/stg_rawg.sql
+      project_path: dbt/rawg
+    limit: 1000
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/rawg/models/staging/stg_rawg
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/rawg/models/staging/stg_rawg
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_profile_target: dev
+    dbt_profiles_file_path: dbt/rawg/profiles.yml
+    dbt_project_name: dbt/rawg
+    file_path: dbt/rawg/models/staging/stg_genres.sql
+    file_source:
+      path: dbt/rawg/models/staging/stg_genres.sql
+      project_path: dbt/rawg
+    limit: 1000
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/rawg/models/staging/stg_genres
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/rawg/models/staging/stg_genres
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_profile_target: dev
+    dbt_profiles_file_path: dbt/rawg/profiles.yml
+    dbt_project_name: dbt/rawg
+    file_path: dbt/rawg/models/staging/stg_platforms.sql
+    file_source:
+      path: dbt/rawg/models/staging/stg_platforms.sql
+      project_path: dbt/rawg
+    limit: 1000
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/rawg/models/staging/stg_platforms
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/rawg/models/staging/stg_platforms
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}

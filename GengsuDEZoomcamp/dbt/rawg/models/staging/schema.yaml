@@ -103,9 +103,9 @@ models:
       - name: _dlt_id
         data_type: character varying
         description: ""
-        test:
+        tests:
           - unique
-          - not null
+          - not_null
 
       - name: esrb_rating__id
         data_type: bigint
@@ -145,13 +145,18 @@ models:
         description: ""
       - name: _dlt_parent_id
         data_type: character varying
-        description: ""
+        description: "dlt id for joining platforms with the parent rawg data"
+        tests:
+          - not_null
+
       - name: _dlt_list_idx
         data_type: bigint
         description: ""
       - name: _dlt_id
         data_type: character varying
         description: ""
+        tests:
+          - unique
 
   - name: stg_genres
     description: ""
@@ -168,8 +173,12 @@ models:
         description: ""
 
       - name: _dlt_parent_id
-        data_type: character varying
+        data_type: "dlt id for joining genres with the parent rawg data"
         description: ""
+        tests:
+          - not_null
       - name: _dlt_id
         data_type: character varying
         description: ""
+        tests:
+          - unique

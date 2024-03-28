@@ -1,11 +1,10 @@
 version: "3"
 services:
   mageai:
-    image: mageai/mageai:latest
-    command: ["mage", "start", "${PROJECT_NAME}"]
     build:
       context: .
       dockerfile: Dockerfile
+    command: ["mage", "start", "${PROJECT_NAME}"]
     env_file:
       - .env
     environment:
