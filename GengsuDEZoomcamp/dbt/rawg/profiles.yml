@@ -1,6 +1,7 @@
 # https://docs.getdbt.com/docs/core/connect-data-platform/profiles.yml
 
-rawg:
+rawg-postgres:
+  target: dev
   outputs:
     dev:
       type: postgres
@@ -12,4 +13,23 @@ rawg:
       schema: staging
       threads: 3
 
-  target: dev
+rawg-bigquery:
+  target: prod
+  outputs:
+    prod:
+      type: bigquery
+      method: service-account-json
+      project: de-tf-411908
+      dataset: rawg
+      keyfile_json:
+        type: service_account
+        project_id: de-tf-411908
+        private_key_id: daf0ececd4f28d2d7a2eb0a137071ee29399a080
+        private_key: -----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDFw5UPNEi5reLj\nJHRinqmpkDYNJZP4pa7yV+H5RnkWV5OmvzKsAixIBpfncl9+9P6AxXpbFbf8pZ2M\nZmXrGeNTIwDKk5ewfnRP+Pb96TaJBuDjqH4zGRrHra2+HlFkBh421Yd3fzZSudCI\n8pLCYVE2D++bML8r82o8pPIw53v8/utpFhQ/dXo9e2l6CA+A/L8l2q4cNaCi/Xxx\n5QypQztQ0FQazN6irdVlY/tiRnbHMElcHCwdAuzoCx++gkb3LzIP/E7ddzFCZb4D\nv1P7AzmReLiwaI/e19zCku3Pf6Qqm84MHWNCB3I4D8UXSN1AyMOzCoZZ1ol+eA/I\nWgf8uoqLAgMBAAECggEARh9xjTCW0O/tUWkts4Ja2nr+D29RporpG5k50S/B48At\n5KRLDV6/4NIlrrWJUvUAAR0Eo6Nx163JzWzJmrFVP7dbonjvAm/0Qh8fRS0aX0AH\nIfIuvWObcU4OGymY5oSc1gikviRnWLH2VXjdvPrQ1wCTj02bm7P16Yb7MYgDGNOT\nhIH782UKFhiaVgz59JBUIPNh3CdmZ3oySD03lGLxTqwfkEeKLHDejtu9Cbft9g1J\nO/awXz1qdNo1EPPYg5A8iGYKU2iIHFzHIr1zPRUu7eOJJMWcFU6B7h6q9kbvQgrF\nOgSoCBdaZLI08V8wiBIYVAHLErGj1heTrcMCgD0U0QKBgQDkHXKo1odWXIGGJusv\n9D9eOmX8FyCMfuJGjq+XSNdqQstZnz//+2mt6Dvs4pwawdkkWY74BDOfHbEUGEOH\nDAwlPnDcmJlseyaARpYjXtUDwamPLLnOHPszZTuaIqISt7njDs0eXnckvxGsKziJ\nx+rRrrgcVFKggBXQf/JQvl8VpQKBgQDd8FbwOxzr8mWDimD6D3UrUlrR4m7KV+B+\n2wpGq9shTYCf1b2fnhbMscSJB424YgTcET+T9nZ+IKtTYCunLp2Hn2+F0Xh9I7s0\nI0yCQg+3cP8jbg9iNm5wg0wUAwmHZBkeS56jtc7kh4y4W05qcERqeDEFvpsJ74/m\n30dYuxcIbwKBgQCQ5fe4MZUEEXyg10XbTx2VYCj56ULem5Zl1SrKQRW8RLNguVxw\n4KUvN24hOYyJHossoMrE1f5oWvbpWcRDGy731WLhbPk/xDYfkza5Pvq2CSUIchOQ\nTi5uZiZm8QrcMuIbzYITgVPS/p9eKpIeSuPozz/ZluJpWxMAPtWP3m0NlQKBgQDA\n2V2CA6ue7pL9GRopT5M9oKMgK4SfuHpvYH/uZtjTeFfjC0RpVWJ0Xafsdi7UX//f\nBfHb7VaLRHH60d88t0nVFlo+yoTLIGhD5sRNj3++o6Zfr/wYGDog9EYAQZ9fEUCu\nTYE8ufdcJtjFPTnHTWR1q5jVaAmqOYsuTyfc1z0tawKBgD3M8G1NWNKs0xhjRZFu\nU6AcsrJV5sefcLpBnB24ksXCl7JFYkaCGvGzBBhBXC5bxen59XXiYWJbBlrfhlzB\nHEsRvBApdDj3hagBTL8mnCNL1NAV9EmUgolKT4H/WerMRzGbNk1M0P+mOIqsQkIj\ndFRKHRj0a7cSfFMrNKcM+cXC\n-----END PRIVATE KEY-----\n
+        client_email: mage-gcp-orchestraction@de-tf-411908.iam.gserviceaccount.com
+        client_id: 108730617215174619605
+        auth_uri: https://accounts.google.com/o/oauth2/auth
+        token_uri: https://oauth2.googleapis.com/token
+        auth_provider_x509_cert_url: https://www.googleapis.com/oauth2/v1/certs
+        client_x509_cert_url: https://www.googleapis.com/robot/v1/metadata/x509/mage-gcp-orchestraction%40de-tf-411908.iam.gserviceaccount.com
+        universe_domain: googleapis.com

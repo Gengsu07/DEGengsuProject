@@ -1,0 +1,14 @@
+bg_rawg:
+  outputs:
+    dev:
+      dataset: staging_rawg
+      job_execution_timeout_seconds: 15
+      job_retries: 1
+      keyfile: de-tf-411908-daf0ececd4f2.json
+      location: US
+      method: service-account
+      priority: interactive
+      project: de-tf-411908
+      threads: 3
+      type: bigquery
+  target: dev

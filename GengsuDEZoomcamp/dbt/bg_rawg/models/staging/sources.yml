@@ -1,0 +1,12 @@
+sources:
+  - name: staging_rawg
+
+    tables:
+      - name: rawg
+      - name: rawg__genres
+      - name: rawg__parent_platforms
+      - name: rawg__platforms
+      - name: rawg__ratings
+      - name: rawg__short_screenshots
+      - name: rawg__stores
+      - name: rawg__tags

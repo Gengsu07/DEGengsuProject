@@ -9,3 +9,12 @@ sources:
       - name: rawg__genres
       - name: rawg__platforms
       - name: rawg__ratings
+
+  - name: stg_rawg_bigquery
+    schema: rawg
+    database: de-tf-411908 #project name for bigquery
+    tables:
+      - name: rawg
+      - name: rawg__genres
+      - name: rawg__platforms
+      - name: rawg__ratings

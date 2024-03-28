@@ -50,11 +50,13 @@ def stream_download_jsonl(url, params):
 @data_loader
 def data_load():
     pipeline = dlt.pipeline(
-        pipeline_name="rawg_bigquery", destination="bigquery", dataset_name="rawg"
+        pipeline_name="rawg_bigquery",
+        destination="bigquery",
+        dataset_name="staging_rawg",
     )
     load_info = pipeline.run(
         stream_download_jsonl(url, params),
-        table_name="staging_rawg",
+        table_name="rawg",
         write_disposition="replace",
     )
     print(load_info)
