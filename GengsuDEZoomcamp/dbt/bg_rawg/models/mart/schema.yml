@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: fctRawg
+    description: "Rawg data that have been joined with data genres and platforms"

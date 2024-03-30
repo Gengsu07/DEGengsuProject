@@ -3,18 +3,52 @@ blocks:
   color: null
   configuration: {}
   downstream_blocks:
+  - load_rawg_bq
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: get_info_rawgAPI
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: get_info_rawgapi
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
   - load_rawg_bq_bar_chart_m2
+  - trigger_dbt_models_bigquery
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
   name: load_rawg_bq
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_loader
-  upstream_blocks: []
+  upstream_blocks:
+  - get_info_rawgapi
   uuid: load_rawg_bq
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: trigger_dbt_models_bigquery
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - load_rawg_bq
+  uuid: trigger_dbt_models_bigquery
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
@@ -39,7 +73,7 @@ type: python
 uuid: rawg_extract_bigquery
 variables_dir: /home/src/mage_data/GengsuDEZoomcamp
 widgets:
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     chart_style: vertical

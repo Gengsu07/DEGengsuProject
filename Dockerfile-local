@@ -7,7 +7,11 @@ ARG USER_CODE_PATH=/home/src/${PROJECT_NAME}
 
 # RUN pip install playwright==1.42.0 && \
 #     playwright install --with-deps
-
 COPY requirements-local.txt ${USER_CODE_PATH}/requirements.txt 
-
 RUN pip3 install -r ${USER_CODE_PATH}requirements.txt
+
+# CMD [ "mage", "start", "${PROJECT_NAME}"]
+# CMD [ "mage", "run", "${PROJECT_NAME}", "rawg_extract_postgres" ]
+# COPY run.sh ${USER_CODE_PATH}/run.sh
+# RUN chmod +x run.sh
+# CMD ["./run.sh"]

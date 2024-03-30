@@ -11,7 +11,7 @@ services:
     env_file:
       - .env
     environment:
-      USER_CODE_PATH: /home/src/${PROJECT_NAME}
+      PROJECT_NAME: ${PROJECT_NAME}
     ports:
       - 6789:6789
     volumes:
@@ -34,6 +34,15 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - ./pg-data:/var/lib/postgresql/data
+
+  runner:
+    build:
+      context: .
+      dockerfile: Dockerfile-runner
+    depends_on:
+      - postgres
+      - mageai
+    restart: no
 
     # env_file:
     #   - .env

@@ -80,10 +80,6 @@ models:
         data_type: timestamp with time zone
         description: ""
 
-      - name: id
-        data_type: bigint
-        description: ""
-
       - name: reviews_count
         data_type: bigint
         description: ""
@@ -134,9 +130,6 @@ models:
   - name: stg_platforms
     description: ""
     columns:
-      - name: platform__id
-        data_type: bigint
-        description: ""
       - name: platform__name
         data_type: character varying
         description: ""
@@ -149,21 +142,9 @@ models:
         tests:
           - not_null
 
-      - name: _dlt_list_idx
-        data_type: bigint
-        description: ""
-      - name: _dlt_id
-        data_type: character varying
-        description: ""
-        tests:
-          - unique
-
   - name: stg_genres
     description: ""
     columns:
-      - name: id
-        data_type: bigint
-        description: ""
       - name: name
         data_type: character varying
         description: ""
@@ -177,8 +158,3 @@ models:
         description: ""
         tests:
           - not_null
-      - name: _dlt_id
-        data_type: character varying
-        description: ""
-        tests:
-          - unique

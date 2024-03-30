@@ -1,0 +1,123 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_profile_target: dev
+    dbt_profiles_file_path: dbt/bg_rawg/profiles.yml
+    dbt_project_name: dbt/bg_rawg
+    file_path: dbt/bg_rawg/models/staging/stg_genres.sql
+    file_source:
+      path: dbt/bg_rawg/models/staging/stg_genres.sql
+      project_path: dbt/bg_rawg
+    limit: 1000
+  downstream_blocks:
+  - dbt/bg_rawg/models/mart/fctRawg
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/bg_rawg/models/staging/stg_genres
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/bg_rawg/models/staging/stg_genres
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_profile_target: dev
+    dbt_profiles_file_path: dbt/bg_rawg/profiles.yml
+    dbt_project_name: dbt/bg_rawg
+    file_path: dbt/bg_rawg/models/staging/stg_platforms.sql
+    file_source:
+      path: dbt/bg_rawg/models/staging/stg_platforms.sql
+      project_path: dbt/bg_rawg
+    limit: 1000
+  downstream_blocks:
+  - dbt/bg_rawg/models/mart/fctRawg
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/bg_rawg/models/staging/stg_platforms
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/bg_rawg/models/staging/stg_platforms
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_profile_target: dev
+    dbt_profiles_file_path: dbt/bg_rawg/profiles.yml
+    dbt_project_name: dbt/bg_rawg
+    file_path: dbt/bg_rawg/models/staging/stg_rawg.sql
+    file_source:
+      path: dbt/bg_rawg/models/staging/stg_rawg.sql
+      project_path: dbt/bg_rawg
+    limit: 1000
+  downstream_blocks:
+  - dbt/bg_rawg/models/mart/fctRawg
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/bg_rawg/models/staging/stg_rawg
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: dbt
+  upstream_blocks: []
+  uuid: dbt/bg_rawg/models/staging/stg_rawg
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    dbt_profile_target: dev
+    dbt_profiles_file_path: dbt/bg_rawg/profiles.yml
+    dbt_project_name: dbt/bg_rawg
+    file_path: dbt/bg_rawg/models/mart/fctRawg.sql
+    file_source:
+      path: dbt/bg_rawg/models/mart/fctRawg.sql
+      project_path: dbt/bg_rawg
+    limit: 1000
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/bg_rawg/models/mart/fctRawg
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - dbt/bg_rawg/models/staging/stg_platforms
+  - dbt/bg_rawg/models/staging/stg_genres
+  - dbt/bg_rawg/models/staging/stg_rawg
+  uuid: dbt/bg_rawg/models/mart/fctRawg
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-03-30 09:14:24.306387+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: rawg_dbt_bigquery
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: rawg_dbt_bigquery
+variables_dir: /home/src/mage_data/GengsuDEZoomcamp
+widgets: []

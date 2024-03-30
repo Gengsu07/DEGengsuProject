@@ -10,7 +10,8 @@ blocks:
       path: dbt/rawg/models/staging/stg_rawg.sql
       project_path: dbt/rawg
     limit: 1000
-  downstream_blocks: []
+  downstream_blocks:
+  - dbt/rawg/models/mart/fctRawg
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -33,7 +34,8 @@ blocks:
       path: dbt/rawg/models/staging/stg_genres.sql
       project_path: dbt/rawg
     limit: 1000
-  downstream_blocks: []
+  downstream_blocks:
+  - dbt/rawg/models/mart/fctRawg
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -56,18 +58,45 @@ blocks:
       path: dbt/rawg/models/staging/stg_platforms.sql
       project_path: dbt/rawg
     limit: 1000
-  downstream_blocks: []
+  downstream_blocks:
+  - dbt/rawg/models/mart/fctRawg
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: sql
   name: dbt/rawg/models/staging/stg_platforms
   retry_config: null
-  status: not_executed
+  status: executed
   timeout: null
   type: dbt
   upstream_blocks: []
   uuid: dbt/rawg/models/staging/stg_platforms
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt_profile_target: dev
+    dbt_profiles_file_path: dbt/rawg/profiles.yml
+    dbt_project_name: dbt/rawg
+    file_path: dbt/rawg/models/mart/fctRawg.sql
+    file_source:
+      path: dbt/rawg/models/mart/fctRawg.sql
+      project_path: dbt/rawg
+    limit: 1000
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: dbt/rawg/models/mart/fctRawg
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - dbt/rawg/models/staging/stg_platforms
+  - dbt/rawg/models/staging/stg_rawg
+  - dbt/rawg/models/staging/stg_genres
+  uuid: dbt/rawg/models/mart/fctRawg
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}

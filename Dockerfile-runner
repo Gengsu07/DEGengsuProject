@@ -1,0 +1,5 @@
+FROM alpine:latest
+
+RUN apk update && apk add --no-cache curl
+
+CMD [ "sh","-c","sleep 20; curl -X POST http://magic:6789/api/pipeline_schedules/5/pipeline_runs/4c1c20cce05b45fcaab6b9034a2aaa70"]

@@ -10,5 +10,5 @@ rawg-postgres:
       password: postgres
       port: 5432
       dbname: rawg
-      schema: staging
+      schema: rawg
       threads: 3

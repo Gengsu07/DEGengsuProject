@@ -7,17 +7,18 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='view') }}
+
 
 with source as (
-    select * from {{ source('staging_rawg', 'rawg') }}
+    select * from {{ source('rawg', 'rawg') }}
     ),
 renamed as (
     select
+        _dlt_id,
         slug,
         name,
         playtime,
-        released,
+       cast(released as timestamp) as released,
         tba,
         background_image,
         rating,
@@ -33,12 +34,9 @@ renamed as (
         added_by_status__playing,
         suggestions_count,
         updated,
-        id,
         reviews_count,
         saturated_color,
         dominant_color,
-        _dlt_load_id,
-        _dlt_id,
         esrb_rating__id,
         esrb_rating__name,
         esrb_rating__slug,

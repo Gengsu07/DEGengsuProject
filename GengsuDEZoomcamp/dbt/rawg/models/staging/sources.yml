@@ -2,17 +2,8 @@ version: 2
 
 sources:
   - name: stg_rawg
-    schema: staging
-    database: rawg
-    tables:
-      - name: rawg
-      - name: rawg__genres
-      - name: rawg__platforms
-      - name: rawg__ratings
-
-  - name: stg_rawg_bigquery
     schema: rawg
-    database: de-tf-411908 #project name for bigquery
+    database: rawg
     tables:
       - name: rawg
       - name: rawg__genres
