@@ -1,0 +1,3 @@
+CREATE DATABASE metabase;
+GRANT ALL PRIVILEGES ON DATABASE metabase TO postgres;
+-- CREATE USER metabase WITH PASSWORD 'metabase'

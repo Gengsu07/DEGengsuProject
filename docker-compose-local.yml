@@ -34,6 +34,27 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - ./pg-data:/var/lib/postgresql/data
+      - ./initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
+
+  metabase:
+    image: metabase/metabase
+    container_name: metabase
+    depends_on:
+      - postgres
+      - mageai
+      - runner
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: metabase
+      MB_DB_USER: ${POSTGRES_USER}
+      MB_DB_PASS: ${POSTGRES_PASSWORD}
+      MB_DB_HOST: db-postgres
+      MB_DB_PORT: 5432
+    ports:
+      - 3000:3000
+    volumes:
+      - /dev/urandom:/dev/random:ro
+    restart: on-failure
 
   runner:
     build:
