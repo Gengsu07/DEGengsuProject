@@ -63,14 +63,14 @@ services:
     depends_on:
       - postgres
       - mageai
-    restart: no
+  restart: "no"
 
-    # env_file:
-    #   - .env
-    # environment:
-    # ENV: dev
-    # POSTGRES_DB: ${POSTGRES_SCHEMA}
-    # POSTGRES_USER: ${POSTGRES_USER}
-    # POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    # POSTGRES_HOST: db-postgres
-    # PG_HOST_PORT: ${PG_HOST_PORT}
+  # env_file:
+  #   - .env
+  # environment:
+  # ENV: dev
+  # POSTGRES_DB: ${POSTGRES_SCHEMA}
+  # POSTGRES_USER: ${POSTGRES_USER}
+  # POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  # POSTGRES_HOST: db-postgres
+  # PG_HOST_PORT: ${PG_HOST_PORT}

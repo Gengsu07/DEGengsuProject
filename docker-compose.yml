@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: ["mage", "run", "${PROJECT_NAME}", "load_rawg_bq_bar_chart_m2"]
+    command: ["mage", "start", "${PROJECT_NAME}"]
     env_file:
       - .env
     environment:

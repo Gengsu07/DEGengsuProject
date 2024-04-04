@@ -42,7 +42,7 @@ blocks:
   language: sql
   name: dbt/bg_rawg/models/staging/stg_platforms
   retry_config: null
-  status: not_executed
+  status: executed
   timeout: null
   type: dbt
   upstream_blocks: []
@@ -66,12 +66,12 @@ blocks:
   language: sql
   name: dbt/bg_rawg/models/staging/stg_rawg
   retry_config: null
-  status: not_executed
+  status: executed
   timeout: null
   type: dbt
   upstream_blocks: []
   uuid: dbt/bg_rawg/models/staging/stg_rawg
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration:
     dbt_profile_target: dev
@@ -89,7 +89,7 @@ blocks:
   language: sql
   name: dbt/bg_rawg/models/mart/fctRawg
   retry_config: null
-  status: not_executed
+  status: executed
   timeout: null
   type: dbt
   upstream_blocks:
