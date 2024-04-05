@@ -2,6 +2,10 @@ bg-rawbg/*.json
 keys
 mage_data
 pg-data
+logs
+secrets.toml
+.terraform.lock.hcl
+.env
 secrets.toml
 GengsuDEZoomcamp/dbt/bg_rawg/profiles.yml
 **/.terraform/*

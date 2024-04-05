@@ -27,13 +27,13 @@ viewer account:
 email: viewer@gmail.com
 password: viewer123
 
-![1712206355848](image/README/1712206355848.png)
+![1712206355848](assets\image\README\1712206355848.png)
 
 ---
 
 Metabase hosted on Google Cloud: [https://gengsudezoomcamp1-metabase-lhyfb2n2qq-wl.a.run.app](https://gengsudezoomcamp1-metabase-lhyfb2n2qq-wl.a.run.app)
 
-![1712206254213](image/README/1712206254213.png)
+![1712206254213](assets\image\README\1712206254213.png)
 [view the dashboard publicly here](http://gengsudezoomcamp1-metabase-lhyfb2n2qq-wl.a.run.app/public/dashboard/2bf30e19-d241-4a67-9330-bab53c9706e4)
 
 ### Reproducibility
@@ -41,18 +41,24 @@ Metabase hosted on Google Cloud: [https://gengsudezoomcamp1-metabase-lhyfb2n2qq-
 1. Clone this repo, and create Rawg API here: `https://rawg.io/apidocs`
 2. Prepare service-account-json from Google Cloud. For easy deployment purpose only, we can use role as Owner.
 3. Replace 'dev-' from dev-secrets.toml in .dlt and dev-profiles.yml inside GengsuDEZoomcamp/bg_rawg. Don't forget to fill credential details here.
-4. Install gcloud SDK
-5. login google cloud via cli:
+4. Install Dbt package
+
+```shell
+   dbt deps
+```
+
+6. Install gcloud SDK
+7. login google cloud via cli:
 
 ```shell
 gcloud auth application-default login
 ```
 
-6. enable cloud filestore api (replace with your project id):
+8. enable cloud filestore api (replace with your project id):
    ```shell
    https://console.developers.google.com/apis/api/file.googleapis.com/overview?project=yourprojectid
    ```
-7. cd Terraform then:
+9. cd Terraform then:
 
 ```shell
 # init project
@@ -90,6 +96,13 @@ there are some containers we spin up:
 
 ```docker
    docker-compose -f docker-compose-local.yml up
+```
+
+if need to install dbt package you can go mage terminal then cd to GengsuDEZoomcamp/dbt/rawg
+Install Dbt package
+
+```shell
+   dbt deps
 ```
 
 ---
