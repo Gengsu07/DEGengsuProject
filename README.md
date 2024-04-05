@@ -9,8 +9,7 @@ _This project can be running locally using docker and cloud (in my case Google C
 ---
 
 ## Cloud Pipeline:
-
-![](assets\gengsudeproject_cloud.png)
+![](https://github.com/Gengsu07/DEGengsuProject/blob/main/assets/gengsudeproject_cloud.png)
 
 1. The source data is from Rawg API
 2. Mage orchestrate update rawg games data weekly
@@ -27,13 +26,13 @@ viewer account:
 email: viewer@gmail.com
 password: viewer123
 
-![1712206355848](assets\image\README\1712206355848.png)
+![1712206355848](https://github.com/Gengsu07/DEGengsuProject/blob/main/assets/image/README/1712206355848.png)
 
 ---
 
 Metabase hosted on Google Cloud: [https://gengsudezoomcamp1-metabase-lhyfb2n2qq-wl.a.run.app](https://gengsudezoomcamp1-metabase-lhyfb2n2qq-wl.a.run.app)
 
-![1712206254213](assets\image\README\1712206254213.png)
+![1712206254213](https://github.com/Gengsu07/DEGengsuProject/blob/main/assets/image/README/1712206254213.png)
 [view the dashboard publicly here](http://gengsudezoomcamp1-metabase-lhyfb2n2qq-wl.a.run.app/public/dashboard/2bf30e19-d241-4a67-9330-bab53c9706e4)
 
 ### Reproducibility
@@ -77,7 +76,7 @@ terraform apply
 
 ## Local Pipeline
 
-![](assets\gengsudeproject_local.png)
+![](https://github.com/Gengsu07/DEGengsuProject/blob/main/assets/gengsudeproject_local.png)
 
 there are some containers we spin up:
 
