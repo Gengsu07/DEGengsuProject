@@ -4,7 +4,7 @@ _This project can be running locally using docker and cloud (in my case Google C
 
 ### What is going to achieve?
 
-> Many games released every day in multi platform like PC, Xbox and even in mobiles. As enthusiast, we want discover how many games released each month in 2024 and how is the distribution?
+> Many games are released every day on multiple platforms like PC, Xbox, and even on mobiles. As enthusiasts, we want to discover how many games released each month in 2024 and how is the game platform's distribution.
 
 ---
 
@@ -15,7 +15,7 @@ _This project can be running locally using docker and cloud (in my case Google C
 1. The source data is from Rawg API
 2. Mage orchestrate update rawg games data weekly
 3. Data ingested/fetched using pipeline `rawg_extract_bigquery` with two block steps in Mage then upload the data to BigQuery data warehouse.
-4. Pipeline then trigger data transformation using DBT pipeline `rawg_dbt_bigquery` inside Mage
+4. Pipeline then trigger data transformation using DBT pipeline `rawg_dbt_bigquery` inside Mage. Actually there are 2 DBT projects,bg_rawg is for cloud and rawg is for local.
 5. The transformed data then saved in Bigquery Warehouse with partition by DAY for ready to analytics purpose
 6. Dashboard created using metabase
 7. Mage and Metabase deployed in Google Cloud using Terraform
@@ -40,7 +40,7 @@ Metabase hosted on Google Cloud: [https://gengsudezoomcamp1-metabase-lhyfb2n2qq-
 
 1. Clone this repo, and create Rawg API here: `https://rawg.io/apidocs`
 2. Prepare service-account-json from Google Cloud. For easy deployment purpose only, we can use role as Owner.
-3. Replace 'dev-' in dev-secrets.toml in .dlt and dev-profiles.yml inside GengsuDEZoomcamp/bg_rawg. Don't forget to fill credential details here.
+3. Replace 'dev-' from dev-secrets.toml in .dlt and dev-profiles.yml inside GengsuDEZoomcamp/bg_rawg. Don't forget to fill credential details here.
 4. Install gcloud SDK
 5. login google cloud via cli:
 
@@ -48,7 +48,7 @@ Metabase hosted on Google Cloud: [https://gengsudezoomcamp1-metabase-lhyfb2n2qq-
 gcloud auth application-default login
 ```
 
-6. enable cloud filestore api:
+6. enable cloud filestore api (replace with your project id):
    ```shell
    https://console.developers.google.com/apis/api/file.googleapis.com/overview?project=yourprojectid
    ```
@@ -85,7 +85,19 @@ there are some containers we spin up:
 ### Reproducibility
 
 1. Clone this repo, and create Rawg API here: `https://rawg.io/apidocs`
-2. Replace 'dev-' in dev-secrets.toml in .dlt and dev-profiles.yml inside GengsuDEZoomcamp/rawg. Don't forget to fill match postgres credential if you have edited it.
-3. ```docker
+2. Replace 'dev-' from dev-secrets.toml in .dlt and dev-profiles.yml inside GengsuDEZoomcamp/rawg. Don't forget to fill match postgres credential if you have edited it.
+3. Spin up the containers
+
+```docker
    docker-compose -f docker-compose-local.yml up
-   ```
+```
+
+---
+
+if any question, you can find me:
+
+```
+Instagram: @sugengw07
+Whatsapp: s.id/gengsu_wa
+Linkedin: s.id/gengsu_linkedin
+```
