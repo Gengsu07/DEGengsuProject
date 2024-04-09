@@ -184,26 +184,26 @@ resource "google_cloud_run_service" "metabase" {
             memory = var.container_memory
           }
         }
-        # env {
-        #   name  = "MB_DB_TYPE"
-        #   value = "postgres"
-        # }
-        # env {
-        #   name  = "MB_DB_DBNAME"
-        #   value = "metabase-db"
-        # }
-        # env {
-        #   name  = "MB_DB_USER"
-        #   value = var.database_user
-        # }
-        # env {
-        #   name  = "MB_DB_PASS"
-        #   value = var.database_password
-        # }
-        # env {
-        #   name  = "MB_DB_HOST"
-        #   value = "${google_sql_database_instance.instance.connection_name}"
-        # }
+        env {
+          name  = "MB_DB_TYPE"
+          value = "postgres"
+        }
+        env {
+          name  = "MB_DB_DBNAME"
+          value = "metabase-db"
+        }
+        env {
+          name  = "MB_DB_USER"
+          value = var.database_user
+        }
+        env {
+          name  = "MB_DB_PASS"
+          value = var.database_password
+        }
+        env {
+          name  = "MB_DB_HOST"
+          value = google_sql_database_instance.instance.private_ip_address
+        }
   }
     }
     metadata {
