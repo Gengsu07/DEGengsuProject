@@ -3,6 +3,7 @@
 resource "google_sql_database_instance" "instance" {
   name                = "${var.app_name}-db-instance"
   region              = var.region
+  project             = var.project_id
   database_version    = "POSTGRES_14"
   deletion_protection = false
   settings {

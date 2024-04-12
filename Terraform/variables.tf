@@ -58,7 +58,7 @@ variable "docker_image" {
 variable "docker_image_metabase" {
   type        = string
   description = "The docker image to deploy to Cloud Run."
-  default     = "metabase/metabase:latest"
+  default     = "sugengw07/metabase-gcloud:latest"
 }
 
 variable "domain" {

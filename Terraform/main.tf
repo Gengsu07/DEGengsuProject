@@ -15,6 +15,7 @@ provider "google" {
   zone    = var.zone
 }
 
+
 # #############################################
 # #               Enable API's                #
 # #############################################
@@ -202,8 +203,24 @@ resource "google_cloud_run_service" "metabase" {
         }
         env {
           name  = "MB_DB_HOST"
-          value = google_sql_database_instance.instance.private_ip_address
+          value = "127.0.0.1"
         }
+        env {
+          name = "JAVA_OPTS "
+          value = "-Xmx2048m"
+        }
+        # env {
+        #   name  = "MB_DB_USER"
+        #   value = "metabase-db_owner"
+        # }
+        # env {
+        #   name  = "MB_DB_PASS"
+        #   value = "WymCwEO0Kc3T"
+        # }
+        # env {
+        #   name  = "MB_DB_CONNECTION_URL"
+        #   value = "postgresql://${var.database_user}:${var.database_password}@/metabase-db?host=/cloudsql/${google_sql_database_instance.instance.connection_name}"
+        # }
   }
     }
     metadata {
