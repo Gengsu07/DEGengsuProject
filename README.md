@@ -97,7 +97,7 @@ there are some containers we spin up:
 ### Reproducibility
 
 1. Clone this repo, and create Rawg API here: `https://rawg.io/apidocs`
-2. Replace 'dev-' from dev-secrets.toml in .dlt and dev-profiles.yml inside GengsuDEZoomcamp/rawg. Don't forget to fill match postgres credential if you have edited it.
+2. Replace 'dev-' from dev-secrets.toml in .dlt and dev-profiles.yml inside GengsuDEZoomcamp/rawg. Don't forget to fill match postgres credential if you have edited it. Rename dev.env to .env for local postgres
 3. Spin up the containers
 
 ```docker

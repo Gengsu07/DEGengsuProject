@@ -63,7 +63,7 @@ services:
     depends_on:
       - postgres
       - mageai
-  restart: "no"
+    restart: on-failure
 
   # env_file:
   #   - .env
