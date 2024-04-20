@@ -1,0 +1,12 @@
+FROM metabase/metabase
+
+RUN apk update
+RUN apk add --no-cache socat
+
+# Set up symlink to Cloud SQL UNIX socket
+ENV GOOGLE_CLOUD_PROJECT=de-tf-411908
+RUN ln -s /cloudsql/$GOOGLE_CLOUD_PROJECT:us-west2:gengsudezoomcamp1-db-instance/.s.PGSQL.5432 pg.sock
+
+COPY metabase-startup.sh startup.sh
+RUN chmod +x startup.sh
+ENTRYPOINT ["./startup.sh"]
